@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>net.haesleinhuepf</groupId>
+		<artifactId>clij-parent-pom</artifactId>
+		<version>1.0.4</version>
+		<relativePath />
+	</parent>
+
+	<groupId>haesleinhuepf</groupId>
+	<artifactId>clij-benchmarking-playground</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<name>clij-benchmarking-playground</name>
+	<description>clij-benchmarking-playground</description>
+	<url>https://github.com/haesleinhuepf/clij-benchmarking-playground</url>
+	<inceptionYear>2017</inceptionYear>
+	<organization>
+		<name>Haesleinhuepf</name>
+		<url>https://github.com/haesleinhuepf</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Simplified BSD License</name>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>haesleinhuepf</id>
+			<name>Robert Haase</name>
+			<url>https://github.com/haesleinhuepf</url>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>none</name>
+		</contributor>
+	</contributors>
+
+	<mailingLists>
+		<mailingList>
+			<name>ImageJ Forum</name>
+			<archive>http://forum.imagej.net/</archive>
+		</mailingList>
+	</mailingLists>
+
+	<scm>
+		<connection>none</connection>
+		<developerConnection>none</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/haesleinhuepf/clij-benchmarking-playground</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/haesleinhuepf/clij-benchmarking-playground/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>None</system>
+	</ciManagement>
+
+	<properties>
+		<package-name>haesleinhuepf</package-name>
+		<main-class>net.haesleinhuepf.playground.benchmarking.Main</main-class>
+		<license.licenseName>bsd_3</license.licenseName>
+		<license.copyrightOwners>Robert Haase</license.copyrightOwners>
+
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>imagej.public</id>
+			<url>http://maven.imagej.net/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>clij</id>
+			<url>http://dl.bintray.com/haesleinhuepf/clij</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej-legacy</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.haesleinhuepf</groupId>
+			<artifactId>clij-core</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
