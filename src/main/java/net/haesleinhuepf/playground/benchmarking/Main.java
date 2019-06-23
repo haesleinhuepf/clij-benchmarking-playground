@@ -31,7 +31,7 @@ public class Main {
             IJ.run("Close All");
 
             // Create test data
-            ImagePlus imp = NewImage.createFloatImage("image", 100, 100, 100, NewImage.FILL_RANDOM);
+            ImagePlus imp = NewImage.createFloatImage("image", 100, 100, 1000, NewImage.FILL_RANDOM);
 
             Img<FloatType> img = ImageJFunctions.convertFloat(imp);
 
@@ -56,17 +56,17 @@ public class Main {
 
             Thread.sleep(2000);
 
-            ij.command().run(DoGImageJOps.class, true, imglibParameters);
+            ij.command().run(DoGImageJOps.class, true, imglibParameters).get();
             ImagePlus opsResult = IJ.getImage();
 
             Thread.sleep(2000);
 
-            ij.command().run(DoGImageJLegacy.class, true, legacyParameters);
+            ij.command().run(DoGImageJLegacy.class, true, legacyParameters).get();
             ImagePlus legacyResult = IJ.getImage();
 
             Thread.sleep(2000);
 
-            ij.command().run(DoGCLIJ.class, true, legacyParameters);
+            ij.command().run(DoGCLIJ.class, true, legacyParameters).get();
             ImagePlus clijResult = IJ.getImage();
 
             Thread.sleep(5000);
