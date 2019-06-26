@@ -12,7 +12,6 @@ import net.imagej.ops.OpService;
 import net.imglib2.RandomAccessibleInterval;
 import net.imglib2.img.Img;
 import net.imglib2.type.numeric.RealType;
-import net.imglib2.view.Views;
 import org.scijava.command.Command;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
@@ -33,10 +32,7 @@ public class GaussianBlurImageJOps<T extends RealType<T>> implements
     private OpService opService;
 
     @Parameter
-    private double sigma1;
-
-    @Parameter
-    private double sigma2;
+    private double sigma;
 
     @Override
     public void run() {
@@ -50,7 +46,7 @@ public class GaussianBlurImageJOps<T extends RealType<T>> implements
         Img<T> dog = image.factory().create(dimensions, image.cursor().next());
 
         // blur twice
-        RandomAccessibleInterval<T> filtered = opService.filter().gauss(image, sigma1, sigma1, sigma1);
+        RandomAccessibleInterval<T> filtered = opService.filter().gauss(image, sigma, sigma, sigma);
 
         // show result
         uiService.show(filtered);

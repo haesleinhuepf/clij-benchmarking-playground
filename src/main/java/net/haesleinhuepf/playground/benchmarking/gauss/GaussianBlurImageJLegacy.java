@@ -3,7 +3,6 @@ package net.haesleinhuepf.playground.benchmarking.gauss;
 import ij.IJ;
 import ij.ImagePlus;
 import ij.plugin.Duplicator;
-import ij.plugin.ImageCalculator;
 import org.scijava.command.Command;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
@@ -15,10 +14,7 @@ public class GaussianBlurImageJLegacy implements
     private ImagePlus currentData;
 
     @Parameter
-    private double sigma1;
-
-    @Parameter
-    private double sigma2;
+    private double sigma;
 
     @Override
     public void run() {
@@ -30,7 +26,7 @@ public class GaussianBlurImageJLegacy implements
         ImagePlus filtered = new Duplicator().run(input, 1, input.getNSlices());
 
         // blur
-        IJ.run(filtered, "Gaussian Blur 3D...", "x=" + sigma1 + " y=" + sigma1 + " z=" + sigma1);
+        IJ.run(filtered, "Gaussian Blur 3D...", "x=" + sigma + " y=" + sigma + " z=" + sigma);
 
         // show result
         filtered.show();

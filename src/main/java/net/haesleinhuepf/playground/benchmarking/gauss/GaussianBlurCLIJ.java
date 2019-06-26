@@ -14,10 +14,7 @@ public class GaussianBlurCLIJ<T extends RealType<T>> implements Command {
     private ImagePlus currentData;
 
     @Parameter
-    private float sigma1;
-
-    @Parameter
-    private float sigma2;
+    private float sigma;
 
     @Override
     public void run() {
@@ -31,7 +28,7 @@ public class GaussianBlurCLIJ<T extends RealType<T>> implements Command {
         ClearCLBuffer filtered = clij.create(input);
 
         // blur
-        clij.op().blur(input, filtered, sigma1, sigma1, sigma1);
+        clij.op().blur(input, filtered, sigma, sigma, sigma);
 
         // show result
         clij.show(filtered, "GaussianBlur");
