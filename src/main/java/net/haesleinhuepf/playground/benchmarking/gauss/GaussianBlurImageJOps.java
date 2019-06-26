@@ -6,7 +6,7 @@
  *     http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package net.haesleinhuepf.playground.benchmarking;
+package net.haesleinhuepf.playground.benchmarking.gauss;
 
 import net.imagej.ops.OpService;
 import net.imglib2.RandomAccessibleInterval;
@@ -18,12 +18,9 @@ import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 import org.scijava.ui.UIService;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 @Plugin(type = Command.class, menuPath = "Plugins>DoG (Ops)")
-public class DoGImageJOps<T extends RealType<T>> implements
+public class GaussianBlurImageJOps<T extends RealType<T>> implements
         Command {
 
     @Parameter
@@ -53,14 +50,10 @@ public class DoGImageJOps<T extends RealType<T>> implements
         Img<T> dog = image.factory().create(dimensions, image.cursor().next());
 
         // blur twice
-        RandomAccessibleInterval<T> filtered1 = opService.filter().gauss(image, sigma1, sigma1, sigma1);
-        RandomAccessibleInterval<T> filtered2 = opService.filter().gauss(image, sigma2, sigma2, sigma2);
-
-        // subtract to get the DoG image
-        opService.math().subtract(dog, Views.iterable(filtered1), Views.iterable(filtered2));
+        RandomAccessibleInterval<T> filtered = opService.filter().gauss(image, sigma1, sigma1, sigma1);
 
         // show result
-        uiService.show(dog);
+        uiService.show(filtered);
 
         watch.stop("IJ Ops");
     }

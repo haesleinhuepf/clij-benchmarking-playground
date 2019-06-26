@@ -1,4 +1,4 @@
-package net.haesleinhuepf.playground.benchmarking;
+package net.haesleinhuepf.playground.benchmarking.dog;
 
 import ij.IJ;
 import ij.ImagePlus;

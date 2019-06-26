@@ -1,14 +1,12 @@
-package net.haesleinhuepf.playground.benchmarking;
+package net.haesleinhuepf.playground.benchmarking.dog;
 
 import ij.ImagePlus;
 import net.haesleinhuepf.clij.CLIJ;
 import net.haesleinhuepf.clij.clearcl.ClearCLBuffer;
-import net.haesleinhuepf.clij.clearcl.ClearCLImage;
 import net.imglib2.type.numeric.RealType;
 import org.scijava.command.Command;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
-import org.scijava.ui.UIService;
 
 @Plugin(type = Command.class, menuPath = "Plugins>DoG (CLIJ)")
 public class DoGCLIJ<T extends RealType<T>> implements Command {

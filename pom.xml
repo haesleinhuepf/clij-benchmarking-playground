@@ -76,7 +76,7 @@
 
 	<properties>
 		<package-name>haesleinhuepf</package-name>
-		<main-class>net.haesleinhuepf.playground.benchmarking.Main</main-class>
+		<main-class>net.haesleinhuepf.playground.benchmarking.dog.Main</main-class>
 		<license.licenseName>bsd_3</license.licenseName>
 		<license.copyrightOwners>Robert Haase</license.copyrightOwners>
 
